@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Datos del Municipio</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <link href="styles.css" rel="stylesheet">
+</head>
+<body>
+   <header class="mb-4 "">INFORMACIÓN DE LA POBLACIÓN</header>
+<div class="container mt-5">
+   <nav class="navbar navbar-expand-lg navbar-light bg-light p-3 shadow-sm">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">Ingrese el código del municipio</a>
+        <div class="d-flex">
+          <input type="number" class="form-control me-2" id="codigo" placeholder="Ingresa el codigo del municipio" maxlength="3" aria-label="Código">
+          <button class="btn btn-primary" type="button" onclick="Buscar()">Buscar</button>
+        </div>
+      </div>
+    </nav>
+   </nav><div class="container">
+      <h1 class="mb-4">Datos del Municipio: <span id="nombre"></span></h1>
+      <table class="table table-striped table-bordered">
+          <tbody>
+              <tr>
+                  <th>Departamento ID:</th>
+                  <td id="depto_id"></td>
+              </tr>
+              <tr>
+                  <th>Municipio ID:</th>
+                  <td id="municipio_id"></td>
+              </tr>
+              <tr>
+                  <th>Tipo de Lugar:</th>
+                  <td id="tipo_lugar"></td>
+              </tr>
+              <tr>
+                  <th>Total de Lugares:</th>
+                  <td id="total_lugares"></td>
+              </tr>
+              <tr>
+                  <th>Capital:</th>
+                  <td id="capital"></td>
+              </tr>
+              <tr>
+                  <th>Extensión Territorial (km²):</th>
+                  <td id="ext_territorial"></td>
+              </tr>
+              <tr>
+                  <th>Población Total:</th>
+                  <td id="pob_total"></td>
+              </tr>
+              <tr>
+                  <th>Índice de Masculinidad:</th>
+                  <td id="indice_masculinidad"></td>
+              </tr>
+              <tr>
+                  <th>Promedio de Hijos por Mujer:</th>
+                  <td id="prom_hijos_mujer"></td>
+              </tr>
+              <tr>
+                  <th>Edad Promedio:</th>
+                  <td id="edad_promedio"></td>
+              </tr>
+              <tr>
+                  <th>Índice de Dependencia:</th>
+                  <td id="indice_dependencia"></td>
+              </tr>
+              <tr>
+                  <th>Años Promedio de Estudio:</th>
+                  <td id="anios_prom_estudio"></td>
+              </tr>
+              <tr>
+                  <th>Tasa de Alfabetismo (%):</th>
+                  <td id="alfabetismo"></td>
+              </tr>
+              <tr>
+                  <th>Viviendas Particulares:</th>
+                  <td id="viviendas_part"></td>
+              </tr>
+              <tr>
+                  <th>Total de Hogares:</th>
+                  <td id="total_hogares"></td>
+              </tr>
+              <tr>
+                  <th>Promedio de Personas por Hogar:</th>
+                  <td id="prom_personas_hogar"></td>
+              </tr>
+              <tr>
+                  <th>Total de Jefas de Hogar (%):</th>
+                  <td id="total_jefas_hogar"></td>
+              </tr>
+              <tr>
+                  <th>Total de Hombres:</th>
+                  <td id="total_sexo_hombre"></td>
+              </tr>
+              <tr>
+                  <th>Porcentaje de Hombres (%):</th>
+                  <td id="porc_sexo_hombre"></td>
+              </tr>
+              <tr>
+                  <th>Total de Mujeres:</th>
+                  <td id="total_sexo_mujeres"></td>
+              </tr>
+              <tr>
+                  <th>Porcentaje de Mujeres (%):</th>
+                  <td id="porc_sexo_mujeres"></td>
+              </tr>
+              <tr>
+                  <th>Total Sector Urbano:</th>
+                  <td id="total_sector_urbano"></td>
+              </tr>
+              <tr>
+                  <th>Porcentaje Sector Urbano (%):</th>
+                  <td id="porc_sector_urbano"></td>
+              </tr>
+              <tr>
+                  <th>Total Sector Rural:</th>
+                  <td id="total_sector_rural"></td>
+              </tr>
+              <tr>
+                  <th>Porcentaje Sector Rural (%):</th>
+                  <td id="porc_sector_rural"></td>
+              </tr>
+              <tr>
+                  <th>Población Edad 0-14:</th>
+                  <td id="pob_edad_014"></td>
+              </tr>
+              <tr>
+                  <th>Porcentaje Edad 0-14 (%):</th>
+                  <td id="porc_edad_014"></td>
+              </tr>
+              <tr>
+                  <th>Población Edad 15-64:</th>
+                  <td id="pob_edad_1564"></td>
+              </tr>
+              <tr>
+                  <th>Porcentaje Edad 15-64 (%):</th>
+                  <td id="porc_edad_1564"></td>
+              </tr>
+              <tr>
+                  <th>Población Edad 65+:</th>
+                  <td id="pob_edad_65"></td>
+              </tr>
+              <tr>
+                  <th>Porcentaje Edad 65+ (%):</th>
+                  <td id="porc_edad_65"></td>
+              </tr>
+              <tr>
+                  <th>Población Pueblo Maya:</th>
+                  <td id="pob_pueblo_maya"></td>
+              </tr>
+              <tr>
+                  <th>Porcentaje Pueblo Maya (%):</th>
+                  <td id="porc_pueblo_maya"></td>
+              </tr>
+              <tr>
+                  <th>Población Pueblo Garífuna:</th>
+                  <td id="pob_pueblo_garifuna"></td>
+              </tr>
+              <tr>
+                  <th>Porcentaje Pueblo Garífuna (%):</th>
+                  <td id="porc_pueblo_garifuna"></td>
+              </tr>
+              <tr>
+                  <th>Población Pueblo Xinca:</th>
+                  <td id="pob_pueblo_xinca"></td>
+              </tr>
+              <tr>
+                  <th>Porcentaje Pueblo Xinca (%):</th>
+                  <td id="porc_pueblo_xinca"></td>
+              </tr>
+              <tr>
+                  <th>Población Pueblo Afrodescendiente:</th>
+                  <td id="pob_pueblo_afrodescendiente"></td>
+              </tr>
+              <tr>
+                  <th>Porcentaje Pueblo Afrodescendiente (%):</th>
+                  <td id="porc_pueblo_afrodescendiente"></td>
+              </tr>
+              <tr>
+                  <th>Población Pueblo Ladino:</th>
+                  <td id="pob_pueblo_ladino"></td>
+              </tr>
+              <tr>
+                  <th>Porcentaje Pueblo Ladino (%):</th>
+                  <td id="porc_pueblo_ladino"></td>
+              </tr>
+              <tr>
+                  <th>Población Pueblo Extranjero:</th>
+                  <td id="pob_pueblo_extranjero"></td>
+              </tr>
+              <tr>
+                  <th>Porcentaje Pueblo Extranjero (%):</th>
+                  <td id="porc_pueblo_extranjero"></td>
+              </tr>
+          </tbody>
+      </table>
+  </div>
+  <footer class="footer mt-auto py-3">
+   <div class="container text-center">
+     <span class="text-white">© 2024 Rúdolf Denilsón Reyes Cabrera</span>
+   </div>
+ </footer>
+ 
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+<script src="scripts.js" defer></script>
+</body>
+</html>

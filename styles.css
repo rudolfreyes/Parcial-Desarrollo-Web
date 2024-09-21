@@ -1,0 +1,188 @@
+/* Estilos globales */
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #d0dc95;
+    color: #333;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+header {
+    background-color: #193859;
+    color: rgb(25, 213, 255);
+    text-align: center;
+    padding: 20px;
+    font-size: 24px;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+/* Contenedor principal */
+.container {
+    margin-top: 30px;
+}
+
+/* Navbar */
+.navbar {
+    background-color: #e9ecef;
+    border-radius: 8px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.navbar-brand {
+    font-weight: bold;
+    color: #103258;
+}
+
+.navbar .form-control {
+    border-radius: 8px;
+    border: 2px solid #153251;
+}
+
+.navbar .btn-primary {
+    background-color: #0e3156;
+    border-radius: 8px;
+    transition: background-color 0.3s ease;
+}
+
+.navbar .btn-primary:hover {
+    background-color: #0056b3;
+}
+
+/* Tabla de datos */
+table {
+    margin-top: 20px;
+    background-color: white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+th, td {
+    padding: 15px;
+    text-align: left;
+    vertical-align: middle;
+    font-size: 16px;
+    border-bottom: 1px solid #ddd;
+}
+
+th {
+    background-color: #16385d;
+    color: white;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+td {
+    color: #555;
+}
+
+.table-striped tbody tr:nth-of-type(odd) {
+    background-color: #f8f9fa;
+}
+
+/* Footer */
+.footer {
+    background-color: #343a40;
+    padding: 20px;
+    color: white;
+    font-size: 14px;
+}
+
+.footer span {
+    font-weight: bold;
+}
+
+.footer a {
+    color: #f8f9fa;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer a:hover {
+    color: #007bff;
+}
+
+/* Títulos */
+h1 {
+    font-size: 28px;
+    color: #1f3e60;
+    text-transform: uppercase;
+    text-align: center;
+    margin-bottom: 30px;
+    letter-spacing: 1px;
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+    .navbar .form-control {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+
+    .navbar .d-flex {
+        flex-direction: column;
+    }
+
+    table {
+        font-size: 14px;
+    }
+
+    th, td {
+        padding: 10px;
+    }
+}
+/* Estilos para la tabla */
+.table {
+    margin-top: 20px;
+    width: 100%;
+    border-collapse: collapse; /* Eliminar espacios entre celdas */
+}
+
+.table th, .table td {
+    padding: 15px; /* Espaciado interno */
+    text-align: left; /* Alinear texto a la izquierda */
+    border-bottom: 1px solid #ddd; /* Línea inferior de las celdas */
+    transition: background-color 0.3s; /* Transición suave */
+}
+
+.table th {
+    background-color: #3c5773; /* Color de fondo de encabezados */
+    color: white; /* Color del texto de encabezados */
+    font-weight: bold; /* Negrita en encabezados */
+    text-transform: uppercase; /* Texto en mayúsculas */
+}
+
+.table td {
+    color: #555; /* Color de texto en celdas */
+}
+
+.table-striped tbody tr:nth-of-type(odd) {
+    background-color: #f8f9fa; /* Color alternativo para filas */
+}
+
+.table-striped tbody tr:hover {
+    background-color: #e2e6ea; /* Color de fondo al pasar el ratón */
+}
+
+.table-bordered {
+    border: 2px solid #007bff; /* Borde de la tabla */
+}
+
+.table-bordered th, .table-bordered td {
+    border: 1px solid #ddd; /* Borde de las celdas */
+}
+
+/* Estilos para hacer la tabla más responsiva */
+@media (max-width: 768px) {
+    .table {
+        font-size: 14px; /* Tamaño de fuente más pequeño en móviles */
+    }
+
+    .table th, .table td {
+        padding: 10px; /* Espaciado reducido */
+    }
+}
+
+
